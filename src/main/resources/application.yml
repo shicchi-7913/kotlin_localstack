@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: localstack_sample
+  datasource:
+    url: jdbc:mysql://db:3306/demo
+    username: user
+    password: password
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
