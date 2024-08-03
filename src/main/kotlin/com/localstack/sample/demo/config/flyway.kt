@@ -12,7 +12,11 @@ class FlywayConfig {
         val flyway = Flyway.configure()
             .dataSource(dataSource)
             .load()
-        flyway.migrate()
+        try {
+            flyway.migrate()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
         return flyway
     }
 }
