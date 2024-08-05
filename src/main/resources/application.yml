@@ -2,10 +2,12 @@ spring:
   application:
     name: localstack_sample
   datasource:
-    url: jdbc:mysql://db:3306/demo
+    url: jdbc:mysql://mysql:3306/demo
     username: user
     password: password
     driver-class-name: com.mysql.cj.jdbc.Driver
+  flyway:
+    locations: classpath:db/migration
 
   jpa:
     hibernate:

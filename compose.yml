@@ -10,9 +10,9 @@ services:
     volumes:
       - .:/app
     depends_on:
-      - db
+      - mysql
 
-  db:
+  mysql:
     image: mysql:8
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
@@ -21,3 +21,8 @@ services:
       MYSQL_PASSWORD: password
     ports:
       - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
