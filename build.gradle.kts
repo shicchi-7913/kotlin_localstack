@@ -45,7 +45,7 @@ tasks.withType<Test> {
 }
 
 flyway {
-	url = "jdbc:mysql://mysql:3306/demo"
-	user = "user"
-	password = "password"
+	url = System.getenv("DB_URL") ?: "jdbc:mysql://mysql:3306/demo"
+	user = System.getenv("DB_USER") ?: "user"
+	password = System.getenv("DB_PASSWORD") ?: "password"
 }
